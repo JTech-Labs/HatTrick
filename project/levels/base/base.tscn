@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b80hyyhpwi55n"]
+
+[ext_resource type="PackedScene" uid="uid://dr51fh3gkmb7k" path="res://characters/base/theCharacter.tscn" id="1_7cwbd"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oq6de"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lg70s"]
+distance = -115.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bolse"]
+distance = -115.0
+
+[node name="Base" type="Node2D"]
+
+[node name="TheCharacter" parent="." instance=ExtResource("1_7cwbd")]
+position = Vector2(-81, -50)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 65)
+shape = SubResource("WorldBoundaryShape2D_oq6de")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_lg70s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_bolse")
