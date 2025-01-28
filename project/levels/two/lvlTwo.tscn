@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4tfl2il8tor8"]
+
+[ext_resource type="PackedScene" uid="uid://dr51fh3gkmb7k" path="res://characters/base/theCharacter.tscn" id="1_g4una"]
+[ext_resource type="PackedScene" uid="uid://bny8h6c2ubuuh" path="res://interactives/doorOne/theDoor.tscn" id="2_eny2n"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oq6de"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lg70s"]
+distance = -115.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bolse"]
+distance = -115.0
+
+[node name="Base" type="Node2D"]
+
+[node name="TheCharacter" parent="." instance=ExtResource("1_g4una")]
+position = Vector2(-91, -43)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 65)
+shape = SubResource("WorldBoundaryShape2D_oq6de")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_lg70s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_bolse")
+
+[node name="TheDoor" parent="." instance=ExtResource("2_eny2n")]
+position = Vector2(113, 44)
