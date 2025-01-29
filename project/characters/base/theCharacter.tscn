@@ -29,7 +29,7 @@ animations = [{
 radius = 5.0
 height = 20.0
 
-[node name="TheCharacter" type="CharacterBody2D"]
+[node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_anw10")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -41,3 +41,6 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_k2fpm")
+
+[node name="Marker" type="Marker2D" parent="."]
+position = Vector2(-1, -6)

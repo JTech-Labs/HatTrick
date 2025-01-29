@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnyfy3dt0b2eg"]
+
+[ext_resource type="Script" path="res://characters/theHat/theHat.gd" id="1_sqrku"]
+
+[node name="TheHat" type="RigidBody2D"]
+script = ExtResource("1_sqrku")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b80hyyhpwi55n"]
+[gd_scene load_steps=12 format=4 uid="uid://b80hyyhpwi55n"]
 
 [ext_resource type="PackedScene" uid="uid://dr51fh3gkmb7k" path="res://characters/base/theCharacter.tscn" id="1_txe7r"]
 [ext_resource type="PackedScene" uid="uid://ct6xasb72uyt7" path="res://characters/CharacterOne/characterOne.tscn" id="2_otcam"]
-[ext_resource type="PackedScene" uid="uid://bny8h6c2ubuuh" path="res://interactives/doorOne/theDoor.tscn" id="3_5t371"]
-[ext_resource type="Texture2D" uid="uid://bf1d16cbag3mx" path="res://characters/Hat_game_stuff2.png" id="4_eqp4x"]
+[ext_resource type="PackedScene" uid="uid://bny8h6c2ubuuh" path="res://interactives/door/theDoor.tscn" id="3_5t371"]
+[ext_resource type="Texture2D" uid="uid://bf1d16cbag3mx" path="res://assets/TileMap.png" id="4_tp4tn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oq6de"]
 
@@ -14,13 +14,13 @@ distance = -115.0
 distance = -115.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgbbj"]
-size = Vector2(142, 16)
+size = Vector2(143, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skb5v"]
-size = Vector2(99, 15)
+size = Vector2(100, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ahbx7"]
-texture = ExtResource("4_eqp4x")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pk1nc"]
+texture = ExtResource("4_tp4tn")
 4:1/next_alternative_id = 4
 4:1/0 = 0
 4:1/3 = 3
@@ -53,15 +53,16 @@ texture = ExtResource("4_eqp4x")
 0:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2vtkg"]
-sources/0 = SubResource("TileSetAtlasSource_ahbx7")
+sources/0 = SubResource("TileSetAtlasSource_pk1nc")
 
-[node name="Base" type="Node2D"]
+[node name="Base2" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 2
+zoom = Vector2(5.1, 5)
 
 [node name="TheCharacter" parent="." instance=ExtResource("1_txe7r")]
 position = Vector2(71, -43)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -80,22 +81,23 @@ shape = SubResource("WorldBoundaryShape2D_bolse")
 [node name="StartPlatform" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartPlatform"]
-position = Vector2(56, -24)
+position = Vector2(55.5, -24)
 shape = SubResource("RectangleShape2D_sgbbj")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-66.5, 24.5)
+position = Vector2(-66, 24)
 shape = SubResource("RectangleShape2D_skb5v")
 
 [node name="TheCharacter2" parent="." instance=ExtResource("2_otcam")]
 position = Vector2(-70, 5)
 
 [node name="TheDoor" parent="." instance=ExtResource("3_5t371")]
-position = Vector2(113, 44)
+position = Vector2(104, 48)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Layer0" type="TileMapLayer" parent="."]
+z_index = -1
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD5/wEAAAADAAEAAAD6/wEAAAADAAEAAAD7/wEAAAADAAEAAAD8/wEAAAADAAEAAAD9/wEAAAADAAEAAAD4/wEAAAAFAAAAAAAAAP7/AAADAAEAAAABAP7/AAADAAEAAAACAP7/AAADAAEAAAADAP7/AAADAAEAAAAEAP7/AAADAAEAAAAFAP7/AAADAAEAAAAGAP7/AAADAAEAAAAHAP7/AAADAAAAAAAGAAIAAAAAAAAAAAD+/wEAAAADAAEAAAD///7/AAADAAEAAAD5/wQAAAAEAAAAAAD6/wQAAAAEAAAAAAD7/wQAAAAEAAAAAAD8/wQAAAAEAAAAAAD9/wQAAAAEAAAAAAD+/wQAAAAEAAAAAAD//wQAAAAEAAAAAAAAAAQAAAAEAAAAAAABAAQAAAAEAAAAAAACAAQAAAAEAAAAAAADAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAFAAQAAAAEAAAAAAAGAAQAAAAEAAAAAAAHAAQAAAAEAAAAAAD4/wQAAAAEAAAAAAAHAAMAAAADAAAAAAAHAAIAAAADAAAAAAAHAAEAAAADAAAAAAAHAAAAAAADAAAAAAAHAP//AAADAAAAAAAHAP3/AAADAAAAAAAHAPz/AAADAAAAAAD4//z/AAAFAAAAAAD4//3/AAAFAAAAAAD4//7/AAAFAAAAAAD4////AAAFAAAAAAD4/wAAAAAFAAAAAAD4/wIAAAAFAAAAAAD4/wMAAAAFAAAAAAAGAAMAAAAAAAAAAAAGAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD7//z/AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD5//3/AAAAAAAAAAD5//7/AAAAAAAAAAD5////AAAAAAAAAAD5/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD5/wMAAAAAAAAAAAD6/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD8/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAP//AAAAAAAAAAAFAP//AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAAEAAAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAAAAAD9////AAAAAAAAAAD8////AAAAAAAAAAD8//7/AAAAAAAAAAD7//7/AAAAAAAAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD7////AAAAAAAAAAD7//3/AAAAAAAAAAD6//3/AAAAAAAAAAD8//3/AAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAD+//7/AAAAAAAAAAD4//v/AAAAAAEAAAD5//v/AAACAAAAAAD6//v/AAACAAAAAAD7//v/AAACAAAAAAD8//v/AAACAAAAAAD9//v/AAACAAAAAAD+//v/AAACAAAAAAD///v/AAACAAAAAAAAAPv/AAACAAAAAAABAPv/AAACAAAAAAACAPv/AAACAAAAAAADAPv/AAACAAAAAAAEAPv/AAACAAAAAAAFAPv/AAACAAAAAAAGAPv/AAACAAAAAAAHAPv/AAABAAEAAAA=")
 tile_set = SubResource("TileSet_2vtkg")
-format = 2
-layer_0/tile_data = PackedInt32Array(131065, 262144, 0, 131066, 262144, 0, 131067, 262144, 0, 131068, 262144, 0, 131069, 262144, 0, 131064, 327680, 0, -131072, 262144, 0, -131071, 262144, 0, -131070, 262144, 0, -131069, 262144, 0, -131068, 262144, 0, -131067, 262144, 0, -131066, 262144, 0, -131065, 196608, 0, 131078, 262144, 1, 131070, 458752, 0, -65537, 393216, 0, 327673, 262144, 0, 327674, 262144, 0, 327675, 262144, 0, 327676, 262144, 0, 327677, 262144, 0, 327678, 262144, 0, 327679, 262144, 0, 262144, 262144, 0, 262145, 262144, 0, 262146, 262144, 0, 262147, 262144, 0, 262148, 262144, 0, 262149, 262144, 0, 262150, 262144, 0, 262151, 262144, 0, 327672, 262144, 0, 196615, 196608, 0, 131079, 196608, 0, 65543, 196608, 0, 7, 196608, 0, -65529, 196608, 0, -196601, 196608, 0, -262137, 196608, 0, -196616, 327680, 0, -131080, 327680, 0, -65544, 327680, 0, -8, 327680, 0, 65528, 327680, 0, 196600, 327680, 0, 262136, 327680, 0, 196614, 327680, 1)
