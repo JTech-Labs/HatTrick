@@ -7,5 +7,9 @@ func _physics_process(delta: float) -> void:
 		self.position = get_node("../Character/Marker").global
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
-	pass # if Input.is_action_just_pressed():
+	var bodies = $Area2D.get_overlapping_bodies()
+	for body in bodies:
+		if body.name in ["BigGuy","smolGun","SwordGuy","TheBarber"] and get_node("../"):
+			picked = true
+		
 		
