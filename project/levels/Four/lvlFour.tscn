@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://03whttxytv07"]
 
 [ext_resource type="PackedScene" uid="uid://dr51fh3gkmb7k" path="res://characters/base/theCharacter.tscn" id="1_qaoqf"]
-[ext_resource type="Texture2D" uid="uid://bf1d16cbag3mx" path="res://assets/TileMap.png" id="2_0132v"]
+[ext_resource type="Texture2D" uid="uid://bf1d16cbag3mx" path="res://TileMap.png" id="2_0132v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oq6de"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvytnwnry4d45"]
 
-[ext_resource type="Texture2D" uid="uid://bf1d16cbag3mx" path="res://assets/TileMap.png" id="1_vkmxy"]
+[ext_resource type="Texture2D" uid="uid://bf1d16cbag3mx" path="res://TileMap.png" id="1_vkmxy"]
 [ext_resource type="Script" path="res://interactives/button/theButton.gd" id="1_xbd73"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swsr6"]
