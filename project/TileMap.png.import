@@ -2,8 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD:project/TileMap.png.import
 uid="uid://bf1d16cbag3mx"
 path="res://.godot/imported/TileMap.png-327b12daea89996a5fa969985a42d558.ctex"
+=======
+uid="uid://xcjo3hxud3pt"
+path="res://.godot/imported/TileMap.png-c10cff5c8bd39120a09625b2f5ab5a62.ctex"
+>>>>>>> e3f6c5238d875b1abb00c31e7fc8be07afbdad34:project/assets/TileMap.png.import
 metadata={
 "vram_texture": false
 }
