@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://dua4g2y0yrtp4"]
+[gd_scene load_steps=10 format=4 uid="uid://dua4g2y0yrtp4"]
 
+[ext_resource type="PackedScene" uid="uid://bgh24tlhayn8l" path="res://levels/transition.tscn" id="1_3yncb"]
 [ext_resource type="PackedScene" uid="uid://dr51fh3gkmb7k" path="res://characters/base/theCharacter.tscn" id="1_w6k55"]
-[ext_resource type="Texture2D" uid="uid://bajmqbqjs2rqh" path="res://TileMap.png" id="2_s6sjf"]
+[ext_resource type="Texture2D" uid="uid://bajmqbqjs2rqh" path="res://assets/TileMap.png" id="2_s6sjf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oq6de"]
 
@@ -86,15 +87,25 @@ size = Vector2(229, 32)
 
 [node name="Base" type="Node2D"]
 
+[node name="Transition" parent="." instance=ExtResource("1_3yncb")]
+position = Vector2(-0.5, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 161.0
+offset_top = -35.0
+offset_right = 501.0
+offset_bottom = -12.0
+text = "Throw hat through layer, posses lever dude."
+
+[node name="TheCharacter2" parent="." instance=ExtResource("1_w6k55")]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-45, 58)
+
 [node name="TheCharacter" parent="." instance=ExtResource("1_w6k55")]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(-84, -38)
-
-[node name="TheCharacter" parent="TheCharacter" instance=ExtResource("1_w6k55")]
-light_mask = 2
-visibility_layer = 2
-position = Vector2(39, 96)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
@@ -123,10 +134,3 @@ tile_set = SubResource("TileSet_lkh2y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_dnksy")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 161.0
-offset_top = -35.0
-offset_right = 201.0
-offset_bottom = -12.0
-text = "Throw hat through layer, posses lever dude."

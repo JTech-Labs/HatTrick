@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://b80hyyhpwi55n"]
+[gd_scene load_steps=14 format=4 uid="uid://b80hyyhpwi55n"]
 
 [ext_resource type="PackedScene" uid="uid://dr51fh3gkmb7k" path="res://characters/base/theCharacter.tscn" id="1_txe7r"]
+[ext_resource type="PackedScene" uid="uid://bgh24tlhayn8l" path="res://levels/transition.tscn" id="1_uqssy"]
 [ext_resource type="PackedScene" uid="uid://ct6xasb72uyt7" path="res://characters/CharacterOne/characterOne.tscn" id="2_otcam"]
 [ext_resource type="PackedScene" uid="uid://bny8h6c2ubuuh" path="res://interactives/door/theDoor.tscn" id="3_5t371"]
-[ext_resource type="Texture2D" uid="uid://bajmqbqjs2rqh" path="res://TileMap.png" id="4_tp4tn"]
+[ext_resource type="Texture2D" uid="uid://bajmqbqjs2rqh" path="res://assets/TileMap.png" id="4_tp4tn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oq6de"]
 
@@ -14,10 +15,10 @@ distance = -115.0
 distance = -115.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgbbj"]
-size = Vector2(143, 16)
+size = Vector2(143, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skb5v"]
-size = Vector2(100, 16)
+size = Vector2(100, 15)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pk1nc"]
 texture = ExtResource("4_tp4tn")
@@ -160,6 +161,8 @@ sources/1 = SubResource("TileSetAtlasSource_uci8q")
 
 [node name="Base2" type="Node2D"]
 
+[node name="Transition" parent="." instance=ExtResource("1_uqssy")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 2
 zoom = Vector2(5.1, 5)
@@ -184,17 +187,18 @@ shape = SubResource("WorldBoundaryShape2D_bolse")
 [node name="StartPlatform" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartPlatform"]
-position = Vector2(55.5, -24)
+light_mask = 3
+position = Vector2(55.5, -23.5)
 shape = SubResource("RectangleShape2D_sgbbj")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-66, 24)
+light_mask = 3
+position = Vector2(-66, 24.5)
 shape = SubResource("RectangleShape2D_skb5v")
 
 [node name="TheCharacter2" parent="." instance=ExtResource("2_otcam")]
-visible = false
 position = Vector2(-70, 5)
 
 [node name="TheDoor" parent="." instance=ExtResource("3_5t371")]

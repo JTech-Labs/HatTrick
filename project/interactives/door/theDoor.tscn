@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bny8h6c2ubuuh"]
 
 [ext_resource type="Script" path="res://interactives/door/theDoor.gd" id="1_ynqdd"]
-[ext_resource type="Texture2D" uid="uid://bf1d16cbag3mx" path="res://TileMap.png" id="2_dt7jp"]
+[ext_resource type="Texture2D" uid="uid://bajmqbqjs2rqh" path="res://assets/TileMap.png" id="2_dt7jp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfg7b"]
 size = Vector2(16, 32)
@@ -53,6 +53,7 @@ shape = SubResource("RectangleShape2D_vfg7b")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_1xafj")
+frame_progress = 0.76515
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)

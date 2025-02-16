@@ -1,24 +1,24 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvytnwnry4d45"]
 
-[ext_resource type="Texture2D" uid="uid://bf1d16cbag3mx" path="res://TileMap.png" id="1_vkmxy"]
 [ext_resource type="Script" path="res://interactives/button/theButton.gd" id="1_xbd73"]
+[ext_resource type="Texture2D" uid="uid://bajmqbqjs2rqh" path="res://assets/TileMap.png" id="2_jn438"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_swsr6"]
-atlas = ExtResource("1_vkmxy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hid4"]
+atlas = ExtResource("2_jn438")
 region = Rect2(112, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bbh51"]
-atlas = ExtResource("1_vkmxy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_efsti"]
+atlas = ExtResource("2_jn438")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o1pa4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_swsr6")
+"texture": SubResource("AtlasTexture_5hid4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bbh51")
+"texture": SubResource("AtlasTexture_efsti")
 }],
 "loop": true,
 "name": &"default",

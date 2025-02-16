@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://nisx0byooiim"]
+[gd_scene load_steps=9 format=4 uid="uid://nisx0byooiim"]
 
 [ext_resource type="PackedScene" uid="uid://dr51fh3gkmb7k" path="res://characters/base/theCharacter.tscn" id="1_ltkck"]
-[ext_resource type="Texture2D" uid="uid://bajmqbqjs2rqh" path="res://TileMap.png" id="2_w4mcv"]
+[ext_resource type="PackedScene" uid="uid://bgh24tlhayn8l" path="res://levels/transition.tscn" id="1_qsvov"]
+[ext_resource type="Texture2D" uid="uid://bajmqbqjs2rqh" path="res://assets/TileMap.png" id="2_w4mcv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oq6de"]
 
@@ -84,6 +85,8 @@ texture = ExtResource("2_w4mcv")
 sources/0 = SubResource("TileSetAtlasSource_e4dk6")
 
 [node name="Base" type="Node2D"]
+
+[node name="Transition" parent="." instance=ExtResource("1_qsvov")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 2

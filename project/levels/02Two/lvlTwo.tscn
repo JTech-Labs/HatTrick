@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://b4tfl2il8tor8"]
+[gd_scene load_steps=12 format=4 uid="uid://b4tfl2il8tor8"]
 
+[ext_resource type="PackedScene" uid="uid://bgh24tlhayn8l" path="res://levels/transition.tscn" id="1_agjf4"]
 [ext_resource type="PackedScene" uid="uid://dr51fh3gkmb7k" path="res://characters/base/theCharacter.tscn" id="1_g4una"]
 [ext_resource type="PackedScene" uid="uid://bny8h6c2ubuuh" path="res://interactives/door/theDoor.tscn" id="2_eny2n"]
-[ext_resource type="Texture2D" uid="uid://bajmqbqjs2rqh" path="res://TileMap.png" id="3_m52px"]
+[ext_resource type="Texture2D" uid="uid://bajmqbqjs2rqh" path="res://assets/TileMap.png" id="3_m52px"]
 [ext_resource type="PackedScene" uid="uid://cvytnwnry4d45" path="res://interactives/button/theButton.tscn" id="4_7qf75"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oq6de"]
@@ -88,6 +89,8 @@ sources/0 = SubResource("TileSetAtlasSource_j031b")
 
 [node name="Base" type="Node2D"]
 
+[node name="Transition" parent="." instance=ExtResource("1_agjf4")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 2
 zoom = Vector2(5.1, 5)
@@ -115,6 +118,7 @@ position = Vector2(104, 48)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+light_mask = 3
 position = Vector2(72, 0)
 shape = SubResource("RectangleShape2D_ap7ma")
 

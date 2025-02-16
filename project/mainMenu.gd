@@ -1,11 +1,30 @@
 extends Node
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+
+func one() -> void:
+	get_tree().change_scene_to_file("res://01One/lvlOne")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func two() -> void:
+	get_tree().change_scene_to_file("res://levels/02Two/lvlTwo.tscn")
+
+
+func three() -> void:
+	get_tree().change_scene_to_file("res://levels/03/lvlTree.tscn")
+
+
+func four() -> void:
+	get_tree().change_scene_to_file("res://levels/04/lvlFour.tscn")
+
+
+func five() -> void:
+	get_tree().change_scene_to_file("res://levels/05Five/lvlFive.tscn")
+
+
+func six() -> void:
+	get_tree().change_scene_to_file("res://levels/06Six/lvlSix.tscn")
+
+
+func boss() -> void:
+	get_tree().change_scene_to_file("res://levels/Boss/lvlBoss.tscn")
